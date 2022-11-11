@@ -1,0 +1,131 @@
+/* MAINPAGE/HOMEPAGE */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    background-color: #c9f2f6;
+    flex: 1 0 auto;
+}
+
+.nav-wrapper {
+    font-family: 'Libre Baskerville', serif;
+}
+.brand-logo{
+    margin-left: 20px;
+    font-size: 40px;
+}
+
+.fa-right-from-bracket, .fa-trash, .fa-play{
+    margin-left: 10px;
+    font-size: 15px;
+}
+.modal-close {
+    float: right;
+}
+
+#magnifying {
+    font-size: 30px;
+    margin-top: 7px;
+}
+
+#close-symbol {
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.recent-entries {
+    margin-bottom: 100%;
+    font-family: 'Libre Baskerville', serif;
+}
+.recent-list {
+    font-size: 20px;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.fa-circle {
+    font-size: 5px;
+}
+
+
+#modalAddProfile {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+footer {
+    background-color: #1ecbdb;
+    }
+    
+
+/* Login Page */
+.login-form button {
+    justify-content: center;
+}
+
+#logForm {
+   border: double 5px black;
+   padding: 10px;
+   background-color:white; 
+}
+
+/* PROFILE PAGE */
+
+.icons i {
+    border: #00838f solid;
+    border-radius: 90px;
+    padding: 10px;
+    font-size: 35px;
+    margin-right: 5px;
+}
+
+.col {
+    height: 100%;
+}
+
+.row {
+    height: 100%;
+
+}
+
+.profile {
+    font-family: 'Libre Baskerville', serif;
+    list-style-type: circle;
+    margin-left: 10px;
+    padding-bottom: 100%;
+}
+
+.profile-buttons{
+    justify-content: center;
+}
+
+.notes-list li{
+   font-size: 20px;
+   margin-bottom: 20px;
+   margin-top: 20px;
+}
+
+.fa-circle{
+    font-size: 10px;
+    margin-right: 7px;
+}
+
+.note-divider{
+    width: 70%;
+    height: 3px;
+    background-color: rgb(0, 171, 37);
+}
+
+#modalEditProfile, #modalAddNote, #modalDeleteProfile, #modalSignUp {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}

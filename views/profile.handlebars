@@ -1,0 +1,167 @@
+<div class="profile">
+    {{!-- NAME BAR --}}
+    <div id="name-plate">
+        <h1>{{first_name}} {{last_name}}</h1>
+    </div>
+    {{!-- ICONS BAR --}}
+    <div class="icons">
+        {{#if has_children}}
+        <i class="fa-solid fa-children"></i>
+        {{/if}}
+        {{#if has_pets}}
+        <i class="fa-solid fa-paw"></i>
+        {{/if}}
+        {{#if likes_sports}}
+        <i class="fa-solid fa-football"></i>
+        {{/if}}
+        {{#if likes_media}}
+        <i class="fa-solid fa-film"></i>
+        {{/if}}
+    </div>
+    {{!-- NOTES SECTION --}}
+    <div class="notes-list">
+        <ul>
+            {{#each notes}}
+            <li><i class="fa-solid fa-circle"></i>{{this.note_text}}</li>
+            <div class="note-divider"></div>
+            {{/each}}
+        </ul>
+    </div>
+    <div class='profile-buttons'>
+        {{!-- EDIT BUTTONS --}}
+        <a class="waves-effect waves-light #00838f cyan darken-3 btn" onclick = document.getElementById('modalEditProfile').style.display='block'>Edit Profile</a>
+        <a class="waves-effect waves-light #00838f cyan darken-3 btn" onclick = document.getElementById('modalAddNote').style.display='block'>Add Note</a>
+        <a class="waves-effect waves-light #00838f cyan darken-3 btn" onclick = document.getElementById('modalDeleteProfile').style.display='block'>Delete Profile</a>
+    </div>
+</div>
+
+
+{{!-- Edit Modal --}}
+<div id="modalEditProfile" class="modal">
+    <div class="modal-content">
+      <a id="cancel-edit" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalEditProfile').style.display='none'><i class="fa-solid fa-x"></i></a>
+      <h4>Edit Profile</h4>
+      <div class="row">
+    <form class="col s12">
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="first_name" type="text" class="validate" placeholder={{first_name}} value={{first_name}}>
+
+            </div>
+            <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate blue-text text-darken-2" placeholder={{last_name}} value={{last_name}}>
+
+            </div>
+        </div>
+        <div class="row">
+            <p>Alter any traits that have changed:</p>
+            <div class="icon-row col s6">
+                <p>
+                    <label for="chldrn">
+                        <input id="chldrn" type="checkbox" 
+                        {{#if has_children}}
+                        checked="checked"
+                        value="1"
+                        {{else}}
+                        value="0"
+                        {{/if}}
+                        />
+                     
+                        <span>Has child(ren)</span>
+                    </label>
+                </p>
+                <p>
+                    <label for="pets">
+                        <input id="pets" type="checkbox"
+                        {{#if has_pets}}
+                        checked="checked"
+                        value="1"
+                        {{else}}
+                        value="0"
+                        {{/if}} />
+                        <span>Has pet(s)</span>
+                    </label>
+                </p>
+                                <p>
+                    <label for="sports">
+                        <input id="sports" type="checkbox" 
+                        {{#if likes_sports}}
+                        checked="checked"
+                        value = "1"
+                        {{else}}
+                        value="0"
+                        {{/if}} />
+                        <span>Enjoys sports</span>
+                    </label>
+                </p>
+            </div>
+            <div class="row">
+                <div class="icon-row col s6">
+                    <p>
+                        <label for="media">
+                            <input id="media" type="checkbox"
+                            {{#if likes_media}}
+                            checked="checked"
+                            {{else}}
+                            value="0"
+                            {{/if}} />
+                            <span>Film junkie</span>
+                        </label>
+                    </p>
+                                        <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Yellow</span>
+                        </label>
+                    </p>
+                                        <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Yellow</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+    </div>
+    <div class="modal-footer">
+{{!--  ADD CODE TO Put       --}}
+      <a id='submit-edit' class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalEditProfile').style.display='none'>Save</a>
+ 
+    </div>
+  </div> 
+
+{{!-- ADD NOTE MODAL --}}
+
+
+  <div id="modalAddNote" class="modal">
+    <div class="modal-content">
+    <a id="cancel-edit" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalAddNote').style.display='none'><i class="fa-solid fa-x"></i></a>
+      <h4>New Note</h4>
+      <div class="input-field">
+        <input id="newNote" type="text" />
+        <label for="newNote">Add anything new you've learned about {{first_name}}</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalAddNote').style.display='none' id="submit-note">Submit</a>
+    </div>
+  </div>
+
+
+  {{!-- DELETE PROFILE MODAL --}}
+
+    <div id="modalDeleteProfile" class="modal">
+    <div class="modal-content">
+    <a id="cancel-edit" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalDeleteProfile').style.display='none'><i class="fa-solid fa-x"></i></a>
+      <h4>Are you sure you want to delete this profile?</h4>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" id="deletePerson" class="modal-close waves-effect waves-green btn-flat">Delete<i class="fa-solid fa-trash"></i></a>
+    </div>
+  </div>
+
+  <script src="/javascript/add-profile.js"></script>
